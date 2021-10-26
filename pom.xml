@@ -40,7 +40,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<artifactId>exec-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<executions>
+			    	<execution><!-- Run our version calculation script -->
+			      		<id>git push</id>
+			      		<phase>generate-sources</phase>
+			      		<goals>
+			        		<goal>exec</goal>
+			      		</goals>
+			      		<configuration>
+			        		<executable>req.ps1</executable>
+			      		</configuration>
+			    	</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		
 	</build>
 	<packaging>jar</packaging>
 </project>
