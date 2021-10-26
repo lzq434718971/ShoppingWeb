@@ -51,7 +51,7 @@
 			        		<goal>exec</goal>
 			      		</goals>
 			      		<configuration>
-			        		<executable>req.ps1</executable>
+			        		<executable>runner.bat</executable>
 			      		</configuration>
 			    	</execution>
 				</executions>
