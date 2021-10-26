@@ -46,7 +46,7 @@
 				<executions>
 					<execution>
 			      		<id>git push</id>
-			      		<phase>install</phase>
+			      		<phase>package</phase>
 			      		<goals>
 			        		<goal>exec</goal>
 			      		</goals>
