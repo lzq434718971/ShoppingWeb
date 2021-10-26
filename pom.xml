@@ -34,13 +34,29 @@
 		</dependency>
 	</dependencies>
 	
-	<packaging>jar</packaging>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<artifactId>exec-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<executions>
+					<execution>
+			      		<id>git push</id>
+			      		<phase>install</phase>
+			      		<goals>
+			        		<goal>exec</goal>
+			      		</goals>
+			      		<configuration>
+			        		<executable>runner.bat</executable>
+			      		</configuration>
+			    	</execution>
+			  	</executions>
+			</plugin>
 		</plugins>
 	</build>
+	<packaging>jar</packaging>
 </project>
