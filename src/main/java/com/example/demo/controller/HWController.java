@@ -8,7 +8,7 @@ public class HWController {
 
     @RequestMapping("/hello")
     public String test() {
-        return "hot fix";  
+        return "hot fix2";  
     }
 
 }
