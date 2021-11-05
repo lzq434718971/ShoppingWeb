@@ -38,12 +38,17 @@ public class HWController {
 	@Autowired
     private ObjectMapper objectMapper;
 	
+	private List<Goods> getPageList(int page,int pagesize,String orderProperty,Boolean isDesc){
+    	int lower=pagesize*page;
+    	int upper=lower+pagesize;
+    	return goodsr.getLimitGoodsInfoInOrder(lower, upper, orderProperty, isDesc);
+    }
+	
     @GetMapping("/hello")
     public String test(HttpServletRequest request,ModelMap model,@RequestParam Map<String,Object> params) throws JsonProcessingException {
     	Principal principal=request.getUserPrincipal();
     	if(principal != null)
     	{
-    		log.info(principal.getName());
         	model.addAttribute("userName",request.getUserPrincipal().getName());
     	}
     	else
@@ -55,53 +60,19 @@ public class HWController {
     	{
     		List<Goods> list=getPageList(0,10,"price",false);
     		String obj=objectMapper.writeValueAsString(list);
-    		log.info(obj+" 1");
     		model.addAttribute("goodsList", obj);
     	}
     	else
     	{
     		List<Goods> list=getPageList(Integer.parseInt(params.get("page").toString()),10,"price",false);
     		String obj=objectMapper.writeValueAsString(list);
-    		log.info(obj+" 2");
-    		model.addAttribute("goodsList",list);
+    		model.addAttribute("goodsList",obj);
     	}
-        return "testindex";
+        return "index";
     }
     
     @GetMapping("/login")
     public String login(HttpServletRequest request) {
         return "loginPage";
-    }
-    
-    private List<Goods> getPageList(int page,int pagesize,String orderProperty,Boolean isDesc){
-    	int lower=pagesize*page;
-    	int upper=lower+pagesize;
-    	return goodsr.getLimitGoodsInfoInOrder(lower, upper, orderProperty, isDesc);
-    }
-    
-    @GetMapping("/img/goodsImg/{imgname}")
-    public String goodsImg(@PathVariable String imgname,HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	response.setDateHeader("Expires", 0);
-		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
-		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
-		response.setHeader("Pragma", "no-cache");
-		response.setContentType("image/jpeg");
-		
-		String serverImgSource="usr/serverImg/goods/";
-		// 获得的系统的根目录
-		File fileParent = new File(File.separator);
-		String photoName = imgname;
-		File file = new File(fileParent, serverImgSource + photoName);
-		
- 
-		BufferedImage bi = ImageIO.read(new FileInputStream(file));
-		ServletOutputStream out = response.getOutputStream();
-		ImageIO.write(bi, "jpg", out);
-		try {
-			out.flush();
-		} finally {
-			out.close();
-		}
-		return null;
     }
 }
