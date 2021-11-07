@@ -56,10 +56,10 @@ public class HWController {
 	
 	@GetMapping("/")
     public String domain() {
-        return "hello";
+        return "redirect:/home";
     }
 	
-    @GetMapping("/hello")
+    @GetMapping("/home")
     public String test(HttpServletRequest request,ModelMap model,@RequestParam Map<String,Object> params) throws JsonProcessingException {
     	ControllerUtil.addUserNameAttribute(request, model);
     	
