@@ -48,10 +48,10 @@ public class HWController {
 	@Autowired
     private MailService mailService;
 	
-	private List<Goods> getPageList(int page,int pagesize,String orderProperty,Boolean isDesc){
+	private List<Goods> getPageList(String keyword,int page,int pagesize,String orderProperty,Boolean isDesc){
     	int lower=pagesize*page;
     	int upper=lower+pagesize;
-    	return goodsr.getLimitGoodsInfoInOrder(lower, upper, orderProperty, isDesc);
+    	return goodsr.getGoodsInfoLimitByKeywordInOrder(keyword,lower, upper, orderProperty, isDesc);
     }
 	
 	@GetMapping("/")
@@ -62,16 +62,33 @@ public class HWController {
     @GetMapping("/home")
     public String test(HttpServletRequest request,ModelMap model,@RequestParam Map<String,Object> params) throws JsonProcessingException {
     	ControllerUtil.addUserNameAttribute(request, model);
-    	
+    	int page,pagesize=10;
+    	String keyword;
     	if(!params.containsKey("page"))
     	{
-    		List<Goods> list=getPageList(0,10,"price",false);
+    		page=0;
+    	}
+    	else
+    	{
+    		page=Integer.parseInt(params.get("page").toString());
+    	}
+    	if(!params.containsKey("keyword"))
+    	{
+    		keyword="";
+    	}
+    	else
+    	{
+    		keyword=params.get("keyword").toString();
+    	}
+    	if(!params.containsKey("page"))
+    	{
+    		List<Goods> list=getPageList(keyword,0,10,"price",false);
     		String obj=objectMapper.writeValueAsString(list);
     		model.addAttribute("goodsList", obj);
     	}
     	else
     	{
-    		List<Goods> list=getPageList(Integer.parseInt(params.get("page").toString()),10,"price",false);
+    		List<Goods> list=getPageList(keyword,Integer.parseInt(params.get("page").toString()),10,"price",false);
     		String obj=objectMapper.writeValueAsString(list);
     		model.addAttribute("goodsList",obj);
     	}
@@ -81,6 +98,12 @@ public class HWController {
     @GetMapping("/login")
     public String login(HttpServletRequest request) {
         return "loginPage";
+    }
+    
+    @GetMapping("/logout_success")
+    public String logoutSuccess(HttpServletRequest request,ModelMap model) {
+    	ControllerUtil.addUserNameAttribute(request, model);
+        return "logout";
     }
     
     @GetMapping("/register")
