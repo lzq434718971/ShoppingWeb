@@ -1,0 +1,29 @@
+#userinfo{
+    color: white;
+    text-align: center;
+    background-color:deepskyblue;
+}
+
+#homeImg{
+    width: 200px;
+    height: 150px;
+}
+
+#searcher{
+    display: block;
+    text-align: center;
+}
+
+.imgCenter{
+    margin:20px;
+    text-align: center;
+}
+
+#listhead{
+    background-color: dodgerblue;
+}
+
+li{
+    display: inline-block;
+    background-color: lightblue;
+}
