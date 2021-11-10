@@ -1,0 +1,16 @@
+#userinfo{
+    color: white;
+    text-align: right;
+    background-color:deepskyblue;
+}
+#homeImg{
+    display:inline-block;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+}
+
+#searcher{
+    display:inline-block;
+    text-align: center;
+}
