@@ -8,9 +8,9 @@ function showList(listjson)
   {
       let entry=document.createElement("li");
       let img=document.createElement("img");
-      let name=document.createElement("p");
-      let price=document.createElement("p");
-      let stock=document.createElement("p");
+      let name=document.createElement("label");
+      let price=document.createElement("label");
+      let stock=document.createElement("label");
       img.src="http://47.106.15.81:8080/img/goodsImg/"+list[i].name+".png";
       name.innerHTML=list[i].name;
       price.innerHTML=list[i].price;
