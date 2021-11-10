@@ -63,7 +63,8 @@ public class HWController {
     public String test(HttpServletRequest request,ModelMap model,@RequestParam Map<String,Object> params) throws JsonProcessingException {
     	ControllerUtil.addUserNameAttribute(request, model);
     	int page,pagesize=10;
-    	String keyword;
+    	String keyword,sortParam;
+    	boolean sortWay;
     	if(!params.containsKey("page"))
     	{
     		page=0;
@@ -80,15 +81,34 @@ public class HWController {
     	{
     		keyword=params.get("keyword").toString();
     	}
+    	if(!params.containsKey("sortParam"))
+    	{
+    		sortParam="name";
+    	}
+    	else
+    	{
+    		sortParam=params.get("sortParam").toString();
+    	}
+    	if(!params.containsKey("sortWay"))
+    	{
+    		sortWay=false;
+    	}
+    	else
+    	{
+    		sortWay=Boolean.valueOf(params.get("sortWay").toString());
+    	}
+    	log.info(keyword);
+    	log.info(sortParam);
+    	log.info(String.valueOf(sortWay));
     	if(!params.containsKey("page"))
     	{
-    		List<Goods> list=getPageList(keyword,0,10,"price",false);
+    		List<Goods> list=getPageList(keyword,0,10,sortParam,sortWay);
     		String obj=objectMapper.writeValueAsString(list);
     		model.addAttribute("goodsList", obj);
     	}
     	else
     	{
-    		List<Goods> list=getPageList(keyword,Integer.parseInt(params.get("page").toString()),10,"price",false);
+    		List<Goods> list=getPageList(keyword,Integer.parseInt(params.get("page").toString()),10,sortParam,sortWay);
     		String obj=objectMapper.writeValueAsString(list);
     		model.addAttribute("goodsList",obj);
     	}
