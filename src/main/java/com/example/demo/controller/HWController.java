@@ -81,7 +81,8 @@ public class HWController {
     	{
     		keyword=params.get("keyword").toString();
     	}
-    	if(!params.containsKey("sortParam"))
+    	if(!params.containsKey("sortParam")
+    			||params.get("sortParam").toString().isBlank())
     	{
     		sortParam="name";
     	}
@@ -89,7 +90,8 @@ public class HWController {
     	{
     		sortParam=params.get("sortParam").toString();
     	}
-    	if(!params.containsKey("sortWay"))
+    	if(!params.containsKey("sortWay")
+    			||params.get("sortWay").toString().isBlank())
     	{
     		sortWay=false;
     	}

@@ -1,16 +1,28 @@
 #userinfo{
     color: white;
-    text-align: right;
+    text-align: center;
     background-color:deepskyblue;
 }
+
 #homeImg{
-    display:inline-block;
-    width: 150px;
-    height: 100px;
-    text-align: center;
+    width: 200px;
+    height: 150px;
 }
 
 #searcher{
-    display:inline-block;
+    display: block;
     text-align: center;
+}
+
+.imgCenter{
+    margin:20px;
+    text-align: center;
+}
+
+#listhead{
+    background-color: dodgerblue;
+}
+
+li{
+    background-color: lightblue;
 }
