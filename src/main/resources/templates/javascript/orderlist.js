@@ -58,8 +58,9 @@ function onPayOrder(listjson)
   document.body.removeChild(tempForm);
 }
 //删除订单按钮动作
-function onDeleteOrder()
+function onDeleteOrder(event)
 {
+  alert(event.srcElement.id);
   let url="http://"+window.location.host+window.location.pathname;
   url=url.replace(/([\w\W]+)\/$/,"$1");
   url+="/cancelOrder";
