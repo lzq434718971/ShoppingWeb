@@ -1,21 +1,26 @@
+body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 #userinfo{
+    display: inline-block;
     color: white;
     text-align: center;
     background-color:deepskyblue;
+    margin-left: auto;
+    padding: 1%;
+    float: right;
 }
 
 #homeImg{
-    width: 200px;
-    height: 150px;
+    display: inline-block;
+    width: 20%;
+    height: auto;
 }
 
 #searcher{
     display: block;
-    text-align: center;
-}
-
-.imgCenter{
-    margin:20px;
     text-align: center;
 }
 
@@ -26,4 +31,5 @@
 li{
     display: inline-block;
     background-color: lightblue;
+    margin: 5px;
 }
