@@ -45,7 +45,10 @@ public class GoodsDetailController {
 		model.addAttribute("goodsStock",goods.getStock());
 		
 		Principal principal=request.getUserPrincipal();
-		visitr.save(new VisitRecord(principal.getName(),goodsName));
+		if(principal!=null)
+		{
+			visitr.save(new VisitRecord(principal.getName(),goodsName));
+		}
 		
 		return "goodsDetailPage";
 	}

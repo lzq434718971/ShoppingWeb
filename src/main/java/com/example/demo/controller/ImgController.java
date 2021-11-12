@@ -51,7 +51,7 @@ public class ImgController {
 		return null;
     }
 	
-	@GetMapping("/public/goodsImg/homeImg")
+	@GetMapping("/public/homeImg")
 	public String homeImg(HttpServletResponse response) throws FileNotFoundException, IOException {
 		reponseImgFromPath(response,"usr/serverImg/","homeImg.png");
 		return null;

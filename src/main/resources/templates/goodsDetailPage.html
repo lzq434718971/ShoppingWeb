@@ -17,7 +17,7 @@
 		</div>
 	</div>
     <div>
-        <img src="">
+        <img src="" id="goodsImg">
         <label id="goodsName" th:text="${goodsName}">商品名称</label>
         <label id="price" th:text="${goodsPrice}">商品价格</label>
         <label id="stock" th:text="${goodsStock}">商品库存</label><br>
@@ -30,7 +30,7 @@
         setHomeImage();
         var username='[[${userName}]]';
         setUserState(username);
-        setCountSetter();
+        setDetailPage();
         if(username=='')
         {
             let button=document.getElementById("addToCart");

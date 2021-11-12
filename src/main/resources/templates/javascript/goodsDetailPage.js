@@ -1,5 +1,8 @@
-function setCountSetter()
+function setDetailPage()
 {
+    let goodsImg=document.getElementById("goodsImg");
+    let goodsNameLabel=document.getElementById("goodsName")
+    goodsImg.src="http://47.106.15.81:8080/img/public/goodsImg/"+goodsNameLabel.innerHTML+".png";
     let addCount=document.getElementById("addCount");
     let subCount=document.getElementById("subCount");
     addCount.onclick=function(){onChangeCount(1)};
