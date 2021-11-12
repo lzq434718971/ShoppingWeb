@@ -21,8 +21,13 @@
     <div id="goodsPanel">
         <img src="" id="goodsImg">
         <label id="goodsName" th:text="${goodsName}">商品名称</label>
-        <label class="price" th:text="'价格:'+${goodsPrice}">价格:商品价格</label>
-        <label class="stock" th:text="'库存:'+${goodsStock}">库存:商品库存</label><br>
+        <div class="price">
+            价格:<label id="price" th:text="${goodsPrice}">商品价格</label>
+        </div>
+        <div class="stock">
+            库存:<label id="stock" th:text="${goodsStock}">商品库存</label><br>
+        </div>
+        
         <div id="cartOperation">
             <button class="commonButton square" id="subCount">-</button>
             <input type="text" id="countBox" value=1 onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"/>

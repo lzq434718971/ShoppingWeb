@@ -87,7 +87,9 @@ a:visited{
 }
 .commonButton:disabled{
     cursor:default;
+    color: rgb(37, 37, 37);
     background-color: lightgray;
+    transition: 100ms;
 }
 
 input{
