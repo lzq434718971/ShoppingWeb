@@ -51,6 +51,7 @@ a:visited{
     font-size: 1.5rem;
     cursor:default;
     padding-left: 3%;
+    width: auto;
     color: gainsboro;
     border-radius: 3px;
     background-color: dodgerblue;
@@ -135,11 +136,6 @@ label{
 input[type=checkbox]{
     width: 16px;
     height: 16px;
-}
-
-.barrier{
-    background-color: dodgerblue;
-    width: 100%;
 }
 
 .centermessage{

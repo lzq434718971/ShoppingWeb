@@ -46,8 +46,10 @@ function getOrderIdList()
   return list;
 }
 //支付订单按钮动作
-function onPayOrder(listjson)
+function onPayOrder(event)
 {
+  let button=document.getElementById(event.srcElement.id);
+  button.disabled=true;
   //获取所有订单号(checkbox)
   let list=getOrderIdList();
   let url="http://"+window.location.host+window.location.pathname;
@@ -69,7 +71,8 @@ function onPayOrder(listjson)
 //删除订单按钮动作
 function onDeleteOrder(event)
 {
-  alert(event.srcElement.id);
+  let button=document.getElementById(event.srcElement.id);
+  button.disabled=true;
   let url="http://"+window.location.host+window.location.pathname;
   url=url.replace(/([\w\W]+)\/$/,"$1");
   url+="/cancelOrder";

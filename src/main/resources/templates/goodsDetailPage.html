@@ -8,23 +8,28 @@
     <script type="text/javascript" src="/javascript/goodsDetailPage.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/generalStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/goodsDetailPage.css">
 </head>
 <body>
 	<div id="pageHead">
-		<img src="http://47.106.15.81:8080/img/public/homeImg.png" id="homeImg">
+		<img src="http://47.106.15.81:8080/img/public/homeImg" id="homeImg">
 		<div id="userinfo">
 			<a id="loginOrUserName">登陆</a>|<a id="registerOrLogouot">注册</a>
 		</div>
 	</div>
-    <div>
+    <p class="barrier">商品详情</p>
+    <div id="goodsPanel">
         <img src="" id="goodsImg">
         <label id="goodsName" th:text="${goodsName}">商品名称</label>
-        <label id="price" th:text="${goodsPrice}">商品价格</label>
-        <label id="stock" th:text="${goodsStock}">商品库存</label><br>
-        <button class="commonButton" id="subCount">-</button>
-        <input type="text" id="countBox" value=1 onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"/>
-        <button class="commonButton" id="addCount">+</button>
-        <button class="commonButton" id="addToCart" onclick="onAddToCart()">加入购物车</button>
+        <label class="price" th:text="'价格:'+${goodsPrice}">价格:商品价格</label>
+        <label class="stock" th:text="'库存:'+${goodsStock}">库存:商品库存</label><br>
+        <div id="cartOperation">
+            <button class="commonButton square" id="subCount">-</button>
+            <input type="text" id="countBox" value=1 onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"/>
+            <button class="commonButton square" id="addCount">+</button>
+            <button class="commonButton" id="addToCart" onclick="onAddToCart()">加入购物车</button>
+        </div>
+        
     </div>
     <script>
         setHomeImage();

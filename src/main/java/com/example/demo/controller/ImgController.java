@@ -47,7 +47,7 @@ public class ImgController {
 	
 	@GetMapping("/public/goodsImg/{imgname}")
     public String goodsImg(@PathVariable String imgname,HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	reponseImgFromPath(response,"usr/serverImg/goods/",imgname);
+    	reponseImgFromPath(response,"usr/serverImg/",imgname);
 		return null;
     }
 	
