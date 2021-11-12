@@ -28,7 +28,7 @@ public class ImgController {
 		response.setHeader("Pragma", "no-cache");
 		response.setContentType("image/jpeg");
 		
-		String serverImgSource="usr/serverImg/goods/";
+		String serverImgSource=path;
 		// 获得的系统的根目录
 		File fileParent = new File(File.separator);
 		String photoName = imgname;
@@ -47,7 +47,7 @@ public class ImgController {
 	
 	@GetMapping("/public/goodsImg/{imgname}")
     public String goodsImg(@PathVariable String imgname,HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	reponseImgFromPath(response,"usr/serverImg/",imgname);
+    	reponseImgFromPath(response,"usr/serverImg/goods/",imgname);
 		return null;
     }
 	
