@@ -9,11 +9,12 @@
     <script type="text/javascript" src="/javascript/goodslist.js"></script>
     <script type="text/javascript" src="/javascript/pageSelector.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/generalStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/generalStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
 	<div id="pageHead">
-		<img src="http://47.106.15.81:8080/img/goodsImg/ravi.png" id="homeImg">
+		<img src="http://47.106.15.81:8080/img/public/homeImg.png" id="homeImg">
 		<div id="userinfo">
 			<a id="loginOrUserName">登陆</a>|<a id="registerOrLogouot">注册</a>
 		</div>
@@ -30,20 +31,20 @@
         <option value=false>升序</option>
         <option value=true>降序</option>
       </select>
-			<input type="submit" value="搜索" id="searchButton">
+			<input class="commonButton" type="submit" value="搜索" id="searchButton">
 	</div>
   <div id="listhead">
-    <h2>商品列表</h2>
+    <h2 class="barrier">商品列表</h2>
   </div>
 	<div id="goods">
     <ol id="goodslist">
     </ol>
 	</div>
-  <div>
-    <button type="button" id="previous">上一页</button>
+  <div id="pageSelect">
+    <button class="commonButton" type="button" id="previous">上一页</button>
     跳转到:<input type="text" id="pagebox" placeholder="页数">
-    <button type="button" id="jumpto">跳转</button>
-    <button type="button" id="next">下一页</button>
+    <button class="commonButton" type="button" id="jumpto">跳转</button>
+    <button class="commonButton" type="button" id="next">下一页</button>
   </div>
   <script type="text/javascript">
     setHomeImage();

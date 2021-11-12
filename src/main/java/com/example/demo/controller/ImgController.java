@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -19,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/img")
 public class ImgController {
 	
-	@GetMapping("/goodsImg/{imgname}")
-    public String goodsImg(@PathVariable String imgname,HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	response.setDateHeader("Expires", 0);
+	private void reponseImgFromPath(HttpServletResponse response,String path,String imgname) throws FileNotFoundException, IOException
+	{
+		response.setDateHeader("Expires", 0);
 		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
 		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
 		response.setHeader("Pragma", "no-cache");
@@ -42,6 +43,17 @@ public class ImgController {
 		} finally {
 			out.close();
 		}
+	}
+	
+	@GetMapping("/public/goodsImg/{imgname}")
+    public String goodsImg(@PathVariable String imgname,HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	reponseImgFromPath(response,"usr/serverImg/goods/",imgname);
 		return null;
     }
+	
+	@GetMapping("/public/goodsImg/homeImg")
+	public String homeImg(HttpServletResponse response) throws FileNotFoundException, IOException {
+		reponseImgFromPath(response,"usr/serverImg/","homeImg.png");
+		return null;
+	}
 }

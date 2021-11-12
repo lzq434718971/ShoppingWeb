@@ -45,7 +45,7 @@ public class HttpSecurityConfig extends WebSecurityConfigurerAdapter {
                 			"/validation",
                 			"/user/*/payConfirmed",
                 			"/goodsDetail/*",
-                			"/img/goodsImg/*").permitAll()
+                			"/img/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()

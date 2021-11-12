@@ -4,18 +4,27 @@ function showList(listjson)
   let list=JSON.parse(listjson);
   for(let i=0;i<list.length;i++)
   {
-    let entry=document.createElement("li");
-    let orderId=document.createElement("p");
-    let goodsName=document.createElement("p");
-    let count=document.createElement("p");
+    let entry=document.createElement("tr");
+    let orderId=document.createElement("td");
+    let goodsName=document.createElement("td");
+    let count=document.createElement("td");
+    let cbsurround=document.createElement("td");
     let checkbox=document.createElement("input");
     orderId.innerHTML=list[i].orderId;
     goodsName.innerHTML=list[i].goodsName;
+    goodsName.onclick=function()
+    {
+      let url="http://"+window.location.host+"/goodsDetail/"+list[i].goodsName;
+      console.log(url);
+      window.location.href=url;
+    }
+    goodsName.className="goodsLink";
     count.innerHTML=list[i].count;
     checkbox.type="checkbox";
     checkbox.name="orderselection";
     checkbox.value=orderId.innerHTML;
-    entry.appendChild(checkbox);
+    cbsurround.appendChild(checkbox);
+    entry.appendChild(cbsurround);
     entry.appendChild(orderId);
     entry.appendChild(goodsName);
     entry.appendChild(count);

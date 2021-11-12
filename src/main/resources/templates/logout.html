@@ -7,15 +7,18 @@
     <script type="text/javascript" src="/javascript/userHead.js"></script>
     <script type="text/javascript" src="/javascript/goodslist.js"></script>
     <script type="text/javascript" src="/javascript/pageSelector.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/generalStyle.css">
 </head>
 <body>
 	<div id="pageHead">
-		<img src="http://47.106.15.81:8080/img/goodsImg/ravi.png" id="homeImg">
+		<img src="http://47.106.15.81:8080/img/public/homeImg.png" id="homeImg">
 		<div id="userinfo">
 			<a id="loginOrUserName">登陆</a>|<a id="registerOrLogouot">注册</a>
 		</div>
 	</div>
-    <p>您已成功注销！</p>
+    <p class="barrier">注销成功</p>
+    <p class="centermessage">您已成功注销！</p>
     <script>
         setHomeImage();
         var username='[[${userName}]]';

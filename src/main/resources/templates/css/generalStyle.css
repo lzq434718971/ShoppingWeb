@@ -1,4 +1,15 @@
+:root{
+    --buttonColor:rgb(40, 113, 250);
+    --buttonActivationColor:rgb(99, 150, 247);
+    --buttonPressedColor:rgb(22, 47, 129);
+    --defaultColor:rgb(194, 194, 194);
+    --activeColor:rgb(95, 95, 255);
+}
+
 body{
+    cursor: default;
+    color: var(--defaultColor);
+    background-color: rgb(14, 21, 31);
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -9,27 +20,129 @@ body{
     text-align: center;
     background-color:deepskyblue;
     margin-left: auto;
+    border-radius: 3px;
     padding: 1%;
     float: right;
+    max-width: 10%;
+}
+
+a{
+    cursor: pointer;
+}
+a:visited{
+    cursor: pointer;
+    color:var(--defaultColor);
 }
 
 #homeImg{
+    cursor: pointer;
+    border-radius: 3px;
     display: inline-block;
-    width: 20%;
-    height: auto;
+    max-width: 15%;
+    max-height: auto;
+    transition: 100ms;
+}
+#homeImg:hover{
+    box-shadow: 0px 0px 5px white;
+    transition: 100ms;
 }
 
-#searcher{
-    display: block;
-    text-align: center;
-}
-
-#listhead{
+.barrier{
+    font-size: 1.5rem;
+    cursor:default;
+    padding-left: 3%;
+    color: gainsboro;
+    border-radius: 3px;
     background-color: dodgerblue;
 }
 
-li{
-    display: inline-block;
-    background-color: lightblue;
-    margin: 5px;
+#pageSelect{
+    text-align: center;
+}
+#pageSelect input{
+    width: 4rem;
+}
+
+.commonButton{
+    cursor: pointer;
+    margin: 0px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color:var(--buttonColor);
+    color: gainsboro;
+    border:none;
+    border-radius: 3px;
+    transition: 100ms;
+}
+.commonButton:hover{
+    color: white;
+    background-color:var(--buttonActivationColor);
+    box-shadow: 0px 0px 5px white;
+    transition: 100ms;
+}
+.commonButton:active{
+    background-color: var(--buttonPressedColor);
+    transition: 100ms;
+}
+.commonButton:disabled{
+    cursor:default;
+    background-color: lightgray;
+}
+
+input{
+    background-color: gainsboro;
+    cursor: pointer;
+    border-style: 3px;
+    font-size: 1rem;
+    border-color:skyblue;
+    border-radius: 3px;
+}
+input:hover{
+    border-color:skyblue;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px white;
+    transition: 100ms;
+}
+input:focus{
+    outline: none;
+    background-color: white;
+    border-color:skyblue;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px var(--activeColor);
+    transition: 100ms;
+}
+
+select{
+    border-radius: 3px;
+    background-color: gainsboro;
+    font-size: 1rem;
+    border:0px;
+}
+select:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px white;
+    transition: 100ms;
+}
+select:focus{
+    box-shadow: 0px 0px 10px var(--activeColor);
+    outline: none;
+}
+
+label{
+    cursor: default;
+}
+
+input[type=checkbox]{
+    width: 16px;
+    height: 16px;
+}
+
+.barrier{
+    background-color: dodgerblue;
+    width: 100%;
+}
+
+.centermessage{
+    text-align: center;
+    font-size: 1.5rem;
 }

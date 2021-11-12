@@ -11,16 +11,19 @@
     <script type="text/javascript" src="/javascript/lib/jquery.qrcode.js"></script>
     <script type="text/javascript" src="/javascript/lib/qrcode.js"></script>
     <script type="text/javascript" src="/javascript/payOrderPage.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/generalStyle.css">
 </head>
 <body>
 	<div id="pageHead">
-		<img src="http://47.106.15.81:8080/img/goodsImg/ravi.png" id="homeImg">
+		<img src="http://47.106.15.81:8080/img/public/homeImg.png" id="homeImg">
 		<div id="userinfo">
 			<a id="loginOrUserName">登陆</a>|<a id="registerOrLogouot">注册</a>
 		</div>
 	</div>
-    <div>
-        <label for="">应支付金额为:</label><label for="" th:text="${totalPrice}"></label>
+    <p class="barrier">支付页面</p>
+    <div class="centermessage">
+        <label  for="">应支付金额为:</label><label for="" th:text="${totalPrice}"></label>
         <div class="content1">
             <div class='imgContain'><img></div>
             <div class="code"></div>

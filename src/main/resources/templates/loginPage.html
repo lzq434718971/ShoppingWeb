@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>登录</title>
     <script type="text/javascript" src="/javascript/util.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/generalStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/loginPage.css">
 </head>
 <body>
-    <img src="http://47.106.15.81:8080/img/goodsImg/ravi.png" id="homeImg">
+    <img src="http://47.106.15.81:8080/img/public/homeImg.png" id="homeImg">
+    <p class="barrier">登录</p>
     <form action="/login" method="post">
-        用户名：<input type="text" name="username" /><br/>
-        密码：<input type="password" name="password" /><br/>
-        <input type="submit" value="登录" />
+        <label class="formlabel">用户名</label><input type="text" name="username" /><br/>
+        <label class="formlabel">密码</label><input type="password" name="password" /><br/>
+        <input class="commonButton" type="submit" value="登录" />
     </form>
     <script>
         setHomeImage();

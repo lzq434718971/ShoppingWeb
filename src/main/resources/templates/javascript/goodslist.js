@@ -8,13 +8,13 @@ function showList(listjson)
   {
       let entry=document.createElement("li");
       let img=document.createElement("img");
-      let name=document.createElement("label");
+      let name=document.createElement("p");
       let price=document.createElement("label");
       let stock=document.createElement("label");
       img.src="http://47.106.15.81:8080/img/goodsImg/"+list[i].name+".png";
       name.innerHTML=list[i].name;
-      price.innerHTML=list[i].price;
-      stock.innerHTML=list[i].stock;
+      price.innerHTML="价格："+list[i].price;
+      stock.innerHTML="库存:"+list[i].stock;
       entry.appendChild(img);
       entry.appendChild(name);
       entry.appendChild(price);
