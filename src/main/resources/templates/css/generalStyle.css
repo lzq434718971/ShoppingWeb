@@ -29,9 +29,11 @@ body{
 a{
     cursor: pointer;
 }
+a:link{
+    color:white;
+}
 a:visited{
-    cursor: pointer;
-    color:var(--defaultColor);
+    color:white;
 }
 
 #homeImg{

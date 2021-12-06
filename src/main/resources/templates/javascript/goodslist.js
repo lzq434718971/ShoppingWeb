@@ -38,9 +38,30 @@ function setSearch()
   let sortParam=document.getElementById("sortParam");
   let sortWay=document.getElementById("sortWay");
   let params=getAllUrlParam();
-  searchBar.value=getUrlParam("keyword");
-  sortParam.value=getUrlParam("sortParam");
-  sortWay.value=getUrlParam("sortWay");
+  if(typeof params.hasOwnProperty("keyword"))
+  {
+    searchBar.value="";
+  }
+  else
+  {
+    searchBar.value=params["keyword"];
+  }
+  if(typeof params.hasOwnProperty(sortParam))
+  {
+    sortParam.value="name";
+  }
+  else
+  {
+    sortParam.value=params["sortParam"];
+  }
+  if(typeof params.hasOwnProperty("sortWay"))
+  {
+    sortWay.value="false"
+  }
+  else
+  {
+    sortWay.value=params["sortWay"];
+  }
   searchButton.onclick=function()
   {
     let url="http://"+window.location.host+window.location.pathname;

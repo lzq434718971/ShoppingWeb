@@ -27,7 +27,6 @@
         <div class="stock">
             库存:<label id="stock" th:text="${goodsStock}">商品库存</label><br>
         </div>
-        
         <div id="cartOperation">
             <button class="commonButton square" id="subCount">-</button>
             <input type="text" id="countBox" value=1 onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"/>

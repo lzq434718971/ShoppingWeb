@@ -1,0 +1,29 @@
+#operation{
+    text-align: right;
+}
+
+#orderlist{
+    margin-top: 0.5rem;
+    background-color: azure;
+    width: 100%;
+    text-align: center;
+    border-radius: 3px;
+    transition: 100ms;
+}
+#orderlist th{
+    background-color: cornflowerblue;
+    color: rgb(61, 61, 61);
+    border-radius: 2px;
+}
+#orderlist td{
+    color: rgb(83, 83, 83);
+}
+#orderlist tr:hover{
+    background-color: lightblue;
+    transition: 100ms;
+}
+
+.goodsLink{
+    cursor: pointer;
+    font-weight: bold;
+}

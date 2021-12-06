@@ -11,12 +11,19 @@
 <body>
     <img src="http://47.106.15.81:8080/img/public/homeImg" id="homeImg">
     <p class="barrier">登录</p>
+    <label id="alertMessage">用户名或密码错误!</label><br>
     <form action="/login" method="post">
         <label class="formlabel">用户名</label><input type="text" name="username" /><br/>
         <label class="formlabel">密码</label><input type="password" name="password" /><br/>
         <input class="commonButton" type="submit" value="登录" />
     </form>
     <script>
+        let params=getAllUrlParam();
+        let alertMessage=document.getElementById("alertMessage")
+        if(!params.hasOwnProperty("error"))
+        {
+            alertMessage.style="display:none";
+        }
         setHomeImage();
     </script>
 </body>

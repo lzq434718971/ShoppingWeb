@@ -15,6 +15,7 @@ function setPageSelector()
   {
     previousButton.style="display:none";
   }
+  pagebox.value=page;
   let params=getAllUrlParam();
   let paramstr;
   params["page"]=parseInt(page)-1;
@@ -30,12 +31,14 @@ function jumptopage()
 {
   let link="http://"+window.location.host+window.location.pathname;
   link=removeLFTail(link);
-  link += "?page=";
+  let params=getAllUrlParam();
   let pagebox=document.getElementById("pagebox");
   let page=pagebox.value;
   if(page==""||page<1||isNaN(parseInt(page)))
   {
     page=1;
   }
-  window.location.href=link+(parseInt(page)-1);
+  params["page"]=page-1;
+  link+=mapToGetParam(params);
+  window.location.href=link;
 }

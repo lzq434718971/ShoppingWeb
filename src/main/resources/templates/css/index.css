@@ -1,0 +1,43 @@
+#searcher{
+    display: block;
+    text-align: center;
+}
+
+li{
+    cursor: pointer;
+    max-width: 30%;
+    display: inline-block;
+    background-color: lightblue;
+    border-radius: 8px;
+    margin: 5px;
+    transition: 100ms;
+}
+li:hover{
+    max-width: 30.5%;
+    font-weight: bold;
+    transition: 100ms;
+}
+li img{
+    border-radius: 3px;
+    margin-top: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    max-width: 60%;
+    max-height: 60%;
+}
+li p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgb(46, 46, 46);
+    text-align: center;
+    font-size: 1.3rem;
+}
+li label{
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 0.3rem;
+    color: rgb(56, 56, 56);
+    text-align: center;
+    display:block;
+    font-size: 0.4rem;
+}

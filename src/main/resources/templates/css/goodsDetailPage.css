@@ -1,0 +1,60 @@
+#goodsImg{
+    max-width: 40%;
+    max-height: 40%;
+}
+
+#goodsPanel{
+    width: 70%;
+    display: inline-block;
+    margin-left: 15%;
+    background-color: lightblue;
+    border-radius: 8px;
+    transition: 100ms;
+    text-align: center;
+}
+#goodsPanel img{
+    border-radius: 3px;
+    margin-top: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.price{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: rgb(56, 56, 56);
+    text-align: left;
+}
+
+.stock{
+    display: inline-block;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: rgb(56, 56, 56);
+    text-align: right;
+}
+
+#goodsName{
+    margin-top: 0px;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: rgb(56, 56, 56);
+    text-align: center;
+    display:block;
+}
+
+#cartOperation{
+    
+}
+#cartOperation input{
+    width: 3rem;
+}
